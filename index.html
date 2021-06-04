@@ -15,6 +15,7 @@
       section {
         margin: 3rem 0;
       }
+
       [id^="tip_heading_goes_here"]:after {
         content: " (click to expand/collapse)";
         font-style: italic;
@@ -31,23 +32,24 @@
         color: black;
       }
 
-      details {
+      details > p {
         height: 0;
         transition: height 0.5s;
         margin: 0 0 4rem;
       }
 
-      details[open] {
+      details[open] > p {
         height: 30vh;
         overflow: auto;
+        border-bottom: 3px solid lime;
       }
 
       details[open] *:not(summary) {
         background: black;
       }
 
-      details[open] > p {
-        border-bottom: 3px solid lime;
+      details > p > * {
+        padding: 1rem;
       }
     </style>
   </head>
