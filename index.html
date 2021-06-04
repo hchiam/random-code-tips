@@ -98,8 +98,10 @@
             `(### ${escapedHeading}(.|[\r\n])+?)###?`,
             "g"
           );
-          const details = [...this.text.matchAll(detailsRegex)][0].join("");
-          this.details = details.replace(
+          const details = [...this.text.matchAll(detailsRegex)];
+          const firstMatch = 0;
+          const firstCaptureGroup = 0;
+          this.details = details[firstMatch][firstCaptureGroup].replace(
             new RegExp("### " + this.heading + "\n?"),
             ""
           );
