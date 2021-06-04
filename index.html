@@ -21,12 +21,33 @@
         font-size: 0.85em;
         color: lime;
       }
+
       summary {
         padding: 1rem;
       }
+
       summary:hover {
         background: lime;
         color: black;
+      }
+
+      details {
+        height: 0;
+        transition: height 0.5s;
+        margin: 0 0 4rem;
+      }
+
+      details[open] {
+        height: 30vh;
+        overflow: auto;
+      }
+
+      details[open] *:not(summary) {
+        background: black;
+      }
+
+      details[open] > p {
+        border-bottom: 3px solid lime;
       }
     </style>
   </head>
