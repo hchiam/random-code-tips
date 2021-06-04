@@ -130,6 +130,25 @@
         return { heading: fetcher.heading, details: fetcher.details };
       }
 
+      function weaklySanitize(string) {
+        return string
+          .replaceAll("<script", "<some-script")
+          .replaceAll("<SCRIPT", "<SOME-SCRIPT")
+          .replaceAll("<iframe", "<some-iframe")
+          .replaceAll("<IFRAME", "<SOME-IFRAME")
+          .replaceAll("<math", "<some-math")
+          .replaceAll("<MATH", "<SOME-MATH")
+          .replaceAll("<TABLE", "<SOME-TABLE")
+          .replaceAll("onerror=", "data-onerror=")
+          .replaceAll("ONERROR=", "DATA-ONERROR=")
+          .replaceAll("onload=", "data-onload=")
+          .replaceAll("ONLOAD=", "DATA-ONLOAD=")
+          .replaceAll("src=", "data-src=")
+          .replaceAll("SRC=", "DATA-SRC=")
+          .replaceAll("href=", "data-href=")
+          .replaceAll("HREF=", "DATA-HREF=");
+      }
+
       (async function run() {
         const fetcher = new Fetcher();
 
@@ -150,11 +169,11 @@
 
         document.querySelector("#tip_heading_goes_here_1").innerText = heading1;
         document.querySelector("#tip_details_go_here_1").innerHTML =
-          marked(details1);
+          weaklySanitize(marked(details1));
 
         document.querySelector("#tip_heading_goes_here_2").innerText = heading2;
         document.querySelector("#tip_details_go_here_2").innerHTML =
-          marked(details2);
+          weaklySanitize(marked(details2));
       })();
     </script>
   </body>
