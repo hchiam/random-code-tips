@@ -90,6 +90,34 @@ function removeBackToTopLink(string) {
   );
 }
 
+function getUTCFormattedDateString(date) {
+  return date.toISOString().replaceAll(/[-.:]/g, "");
+}
+
+function createCalendarEvent(
+  summary,
+  start = "20160204T090000Z",
+  end = "20160204T100000Z"
+) {
+  const icsString =
+    "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Random Code Tips//NONSGML v1.0//EN\nBEGIN:VEVENT" +
+    "\nRRULE:FREQ=WEEKLY" +
+    "\nDTSTART:" +
+    start +
+    "\nDTEND:" +
+    end +
+    "\nSUMMARY:" +
+    summary +
+    "\nEND:VEVENT\nEND:VCALENDAR";
+
+  window.open("data:text/calendar;charset=utf8," + escape(icsString));
+}
+
+function createDefaultEvent() {
+  const now = getUTCFormattedDateString(new Date());
+  createCalendarEvent("Random Code Tips", now, now);
+}
+
 (async function run() {
   const fetcher = new Fetcher();
 
@@ -117,4 +145,8 @@ function removeBackToTopLink(string) {
   document.querySelector("#tip_details_go_here_2").innerHTML = weaklySanitize(
     marked(removeBackToTopLink(details2))
   );
+
+  document
+    .querySelector("#calendar")
+    .addEventListener("click", createDefaultEvent);
 })();
