@@ -83,6 +83,13 @@ function weaklySanitize(string) {
     .replaceAll("HREF=", "DATA-HREF=");
 }
 
+function removeBackToTopLink(string) {
+  return string.replace(
+    /\*?\*?\[⬆? ?back to top\]\(#table-of-contents\)\*?\*?/g,
+    ""
+  );
+}
+
 (async function run() {
   const fetcher = new Fetcher();
 
@@ -103,11 +110,11 @@ function weaklySanitize(string) {
 
   document.querySelector("#tip_heading_goes_here_1").innerText = heading1;
   document.querySelector("#tip_details_go_here_1").innerHTML = weaklySanitize(
-    marked(details1)
+    marked(removeBackToTopLink(details1))
   );
 
   document.querySelector("#tip_heading_goes_here_2").innerText = heading2;
   document.querySelector("#tip_details_go_here_2").innerHTML = weaklySanitize(
-    marked(details2)
+    marked(removeBackToTopLink(details2))
   );
 })();
