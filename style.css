@@ -1,0 +1,43 @@
+section {
+  margin: 3rem 0;
+}
+
+[id^="tip_heading_goes_here"]:after {
+  content: " (click to expand/collapse)";
+  font-style: italic;
+  font-size: 0.85em;
+  color: lime;
+}
+
+summary {
+  padding: 1rem;
+}
+
+summary:hover {
+  background: lime;
+  color: black;
+}
+
+details > p {
+  height: 0;
+  transition: height 0.5s;
+  margin: 0 0 4rem;
+}
+
+details[open] > p {
+  height: 30vh;
+  overflow: auto;
+  border-bottom: 3px solid lime;
+}
+
+details[open] *:not(summary) {
+  background: black;
+}
+
+details > p > * {
+  padding: 1rem;
+}
+
+[id^="tip_details_go_here"] > * {
+  max-width: 60ch;
+}
