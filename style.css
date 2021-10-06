@@ -1,5 +1,15 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50vh;
+  position: relative;
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+
 section {
-  margin: 3rem 0;
+  margin: 1rem 0;
 }
 
 [id^="tip_heading_goes_here"]:after {
