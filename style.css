@@ -1,15 +1,16 @@
 main {
-  /* display: flex; */
-  flex-direction: column;
-  justify-content: center;
-  height: 50vh;
-  position: relative;
+  display: flex;
+  justify-content: flex-start;
   margin-left: 1rem;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 section {
-  margin: 1rem 0;
+  margin: 1rem;
+  width: 100%;
+  min-width: 500px;
+  max-width: max(500px, 40vw);
 }
 
 [id^="tip_heading_goes_here"]:after {
