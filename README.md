@@ -1,4 +1,4 @@
-# Random Code Tips
+# Random Code Tips [![version](https://img.shields.io/github/release/hchiam/random-code-tips?style=for-the-badge)](https://github.com/hchiam/random-code-tips/releases) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://github.com/hchiam/random-code-tips/blob/main/LICENSE)
 
 <https://random-code-tips.surge.sh>
 
