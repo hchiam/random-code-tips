@@ -2,6 +2,8 @@
 
 <https://random-code-tips.surge.sh>
 
+Bite-sized learning. Set up calendar reminders to make reading it all more manageable.
+
 Dynamically generated from [ryanmcdermott/clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) and [ryanmcdermott/code-review-tips](https://github.com/ryanmcdermott/code-review-tips).
 
 ```bash
