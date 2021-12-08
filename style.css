@@ -6,7 +6,7 @@ main {
 }
 
 section {
-  margin: 1rem 0;
+  margin: 1rem 1rem 1rem 0;
   width: 100%;
   min-width: 500px;
   max-width: max(500px, 40vw);
