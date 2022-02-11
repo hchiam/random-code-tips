@@ -8,7 +8,6 @@ main {
 section {
   margin: 1rem 1rem 1rem 0;
   width: 100%;
-  min-width: 500px;
   max-width: max(500px, 40vw);
 }
 
@@ -17,6 +16,7 @@ section {
   font-style: italic;
   font-size: 0.85em;
   color: lime;
+  display: block;
 }
 
 summary {
@@ -28,8 +28,19 @@ summary {
   cursor: pointer;
 }
 
-summary:hover {
+summary:hover,
+summary:focus {
   background: lime;
+  color: black;
+}
+
+summary:hover:before,
+summary:focus:before {
+  border-color: transparent transparent transparent black;
+}
+
+summary:hover:after,
+summary:focus:after {
   color: black;
 }
 
